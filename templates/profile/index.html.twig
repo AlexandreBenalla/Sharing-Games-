@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfileController!{% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper">
+    <div>
+        <h1>{{ cur_profile.getImgLink }}</h1>
+        <img src="{{ asset('public/profile_images/' ~ cur_profile.getImgLink) }}">
+        <h1>Profil de {{ cur_profile.getName }}!</h1>
+
+    </div>
+    {% if app.user %}
+        <h3> modifiez vos paramètres, laissez une case vide si vous ne voulez pas modifier la donnée associée</h3>
+        {{ form(form) }}
+    {% endif %}
+</div>
+
+{% endblock %}
